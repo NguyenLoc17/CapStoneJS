@@ -1,0 +1,370 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  /* Đưa container vào giữa màn hình */
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #636363;
+  font-size: 16px;
+  background-color: #eee7d7;
+}
+
+.title p {
+  color: #f55f8d;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title h2 {
+  font-size: 70px;
+  font-weight: 700;
+  margin: 20px 0;
+  color: black;
+}
+
+/* Header */
+
+.header a {
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 28px;
+  transition: 0.5s;
+  font-size: 15px;
+  color: black;
+  font-weight: 500;
+}
+
+.header .container {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 55px 15px;
+}
+
+.header .container img {
+  width: 100px;
+}
+
+.container a {
+  transition: 0.5s;
+}
+
+.container a:hover {
+  color: #f55f8d;
+}
+
+.container a span {
+  position: relative;
+  display: inline-block;
+}
+
+.container a:hover span {
+  animation: upToDown 0.3s;
+}
+
+@keyframes upToDown {
+  49% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+
+.btn-gradient {
+  padding: 20px 35px;
+  margin-left: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  background-image: linear-gradient(
+    to right,
+    #f55f8d 0,
+    #f8ae56 51%,
+    #f55f8d 100%
+  );
+  background-size: 200%;
+  border: 1px solid transparent;
+  transition: all 0.5s;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  line-height: 1.2;
+}
+
+.btn-gradient:hover {
+  background-position: right;
+}
+
+/* Carousel */
+.carousel {
+  overflow: hidden;
+  background-image: url(./img/pic2.png);
+  background-size: 100%;
+  background-position: top;
+  background-size: cover;
+}
+
+.carousel .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 90%;
+}
+
+.carousel-content {
+  width: 100%;
+  margin: 10px 10px;
+  padding-left: 70px;
+}
+
+.carousel-content p {
+  font-size: 18px;
+}
+
+.carousel-content .list {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.carousel-content .list ul {
+  padding: 10px 5px;
+}
+
+.carousel-content i {
+  color: black;
+  padding-right: 10px;
+}
+
+.carousel-content button {
+  margin-left: 0px;
+}
+
+.carousel img {
+  width: 50%;
+  border-radius: 50px;
+}
+
+/* Product */
+.product {
+  background-image: url(./img/bg2.png);
+  background-size: cover;
+  background-position: top center;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.product__content .product__box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product__item {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  padding: 30px 45px;
+  border: 3px solid transparent;
+}
+
+.product__item:hover {
+  transform: translateY(-20px);
+  border-image: url(./img/br.png) 1 round;
+}
+
+.product__item img {
+  width: 215px;
+}
+
+.product__item h3 {
+  font-weight: 700;
+  font-size: 25px;
+  color: #262626;
+  margin: 15px 0;
+}
+
+.product__item .add_cart_btn {
+  padding: 20px 35px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  background-image: linear-gradient(
+    to right,
+    #f55f8d 0,
+    #f8ae56 51%,
+    #f55f8d 100%
+  );
+  background-size: 200%;
+  border: 1px solid transparent;
+  transition: all 0.5s;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  line-height: 1.2;
+}
+
+.product__item .add_cart_btn:hover {
+  background-position: right;
+}
+/* FOOTER */
+footer {
+  display: block;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0e1b1f;
+  background-size: contain;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer__top {
+  padding: 50px 60px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  display: flex;
+}
+
+.footer__text,
+.footer__form {
+  width: 50%;
+}
+
+.footer__text h2 {
+  font-size: 28px;
+  color: #262626;
+  padding-top: 12px;
+}
+
+.footer__form form {
+  display: flex;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 60px 0 rgb(0, 0, 0, 0.1);
+}
+
+.footer__form input {
+  padding: 20px 20px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #888;
+  background: #fff;
+  flex: 1 1 auto;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 1px solid #fff;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.footer__form input:focus,
+.footer__form input:hover {
+  border-color: #f55f8d;
+}
+
+.footer__form button {
+  padding: 20px 35px;
+  font-size: 20px;
+  background-image: linear-gradient(
+    to right,
+    #f55f8d 0,
+    #f8ae56 51%,
+    #f55f8d 100%
+  );
+  background-size: 200%;
+  border-color: transparent;
+  transition: all 0.5s;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: white;
+  cursor: pointer;
+}
+
+.footer__form button:hover {
+  background-position: right center;
+}
+
+.footer__form button:hover i {
+  animation: toLeftFromRight 0.5s forwards;
+  display: inline-block;
+}
+
+@keyframes toLeftFromRight {
+  49% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+
+.footer__bottom i {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 35px;
+  font-weight: 900;
+  background-image: linear-gradient(
+    to right,
+    #f55f8d 0,
+    #f8ae56 51%,
+    #f55f8d 100%
+  );
+  background-size: 200%;
+  margin-right: 10px;
+}
+
+.footer__bottom {
+  display: flex;
+  padding: 40px 0;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}

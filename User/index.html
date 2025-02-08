@@ -1,11 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneaker Shop</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICON FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINE AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <!-- ANIMATE -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Nhúng file css-->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <img class="logo" src="./img/logo.jpg" alt="logo" />
+        <nav>
+          <a href="#"
+            ><span>Home</span>
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <a href="#"
+            ><span>Shop</span>
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <a href="#"
+            ><span>About us</span>
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <a href="#"
+            ><span>Contact us</span>
+            <i class="fa fa-angle-down"></i>
+          </a>
+          <button class="btn-gradient">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="carousel">
+      <div class="container">
+        <div class="carousel-content">
+          <div class="title">
+            <p class="animate__animated animate__fadeInUp">
+              <span>We have best Sneakers</span>
+            </p>
+            <h2 class="animate__animated animate__fadeInUp">
+              AUTHENTIC <br />
+              SNEAKERS
+            </h2>
+          </div>
+          <p class="animate__animated animate__fadeInUp animate__delay-1s">
+            Step into comfort, walk with confidence, and leave a
+            <br />
+            lasting impression with every stride.
+          </p>
+          <div
+            class="list animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <ul>
+              <i class="fa-solid fa-truck-fast"></i>
+              Fast shipping
+            </ul>
+            <ul>
+              <i class="fa-solid fa-ranking-star"></i>
+              Top quality
+            </ul>
+          </div>
+          <button
+            class="btn-gradient animate__animated animate__fadeInUp animate__delay-2s"
+          >
+            GET SOME
+          </button>
+        </div>
+        <img
+          class="animate__animated animate__fadeInUp animate__delay-1s"
+          src="./img/banner.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="container">
+        <div class="product__content">
+          <div
+            class="title wow animate__animated animate__fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.1s"
+          >
+            <p><span>What We Selling</span></p>
+            <h2>Our Products</h2>
+          </div>
+          <div
+            class="product__box wow animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <div class="product__item">
+              <img src="./img/product_1.jpg" alt="" />
+              <h3>Nike Air Jordan 1 Low Reverse Black Toe</h3>
+              <p>3.500.000đ</p>
+              <button class="add_cart_btn">
+                <i class="fa-solid fa-cart-plus"></i><span> Add to cart</span>
+              </button>
+            </div>
+            <div class="product__item">
+              <img src="./img/pic2_2.jpg" alt="" />
+              <h3>Strategy & Research</h3>
+              <p>
+                Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent
+                lacus magna, rhoncus quis magna quis.
+              </p>
+            </div>
+            <div class="product__item">
+              <img src="./img/pic3_2.jpg" alt="" />
+              <h3>Growth Tracking</h3>
+              <p>
+                Vestibulum a efficitur ex. Ut iaculis dapibus iaculis. Praesent
+                lacus magna, rhoncus quis magna quis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div
+          class="footer__top wow animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          <div class="footer__text">
+            <h2>Subscribe To Our Newsletter</h2>
+          </div>
+          <div class="footer__form">
+            <form>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Your Email Address"
+              />
+              <button>
+                <i class="las la-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="footer__bottom wow animate__animated animate__fadeIn animate__delay-1s"
+        >
+          <div class="phone">
+            <i class="fa fa-phone"></i>
+            <span> 0123-456-789 </span>
+          </div>
+          <div class="email">
+            <i class="fa fa-envelope"></i>
+            <span> BestSneakersVN@gmail.com </span>
+          </div>
+          <div class="address">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> Ho Chi Minh City, Vietnam </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- waypoint -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+      integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Animate after roll: WOW -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Custom WOW -->
+    <script>
+      new WOW().init();
+    </script>
+
+    <!-- Owl carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+    />
+  </body>
 </html>
