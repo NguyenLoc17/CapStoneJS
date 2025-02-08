@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Capstone Nhóm 1</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+        <!-- style css -->
+        <link rel="stylesheet" href="./../../assets/css/styles.css" />
+    </head>
+
+    <body>
+        <div class="d-flex">
+            <div class="left">
+                <div class="header bg-dark">
+                    <h5 class="text-light logo">Shoes Shop</h5>
+                    <div class="sidebar bg-body-tertiary">
+                        <ul class="sidebar__list">
+                            <li class="sidebar__item py-3">
+                                <a href="#" class="sidebar__link">
+                                    <i class="fa-solid fa-list pe-1"></i>
+                                    <span>Product List</span>
+                                </a>
+                            </li>
+                            <li class="sidebar__item py-3">
+                                <a
+                                    href="./../../../user/index.html"
+                                    class="sidebar__link"
+                                >
+                                    <i class="fa-regular fa-user pe-1"></i>
+                                    <span>User</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2 class="py-3">Quản lý sản phẩm quyền </h2>
+                <div class="row pb-3">
+                    <div class="col-2">
+                        <button
+                            type="button"
+                            class="btn btn-warning text-light"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            id="btnAddProduct"
+                        >
+                           ADD/EDIT PRODUCT
+                        </button>
+                    </div>
+                    <div class="col-7">
+                        <div class="input-group mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Tìm kiếm sản phẩm"
+                                aria-label="Recipient's username"
+                                aria-describedby="basic-addon2"
+                                id="searchProduct"
+                            />
+                            <span class="input-group-text" id="basic-addon2"
+                                ><i class="fa-solid fa-magnifying-glass"></i
+                            ></span>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-3"><span>Sắp xếp: </span></div>
+                            <div class="col-9">
+                                <select
+                                    name=""
+                                    id="filterPrice"
+                                    class="inputSelect d-block w-100 form-control"
+                                >
+                                    <option value="all">Chọn loại</option>
+                                    <option value="giamDan">
+                                        Giá tiền từ lớn đến bé
+                                    </option>
+                                    <option value="tangDan">
+                                        Giá tiền từ bé đến lớn
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-warning">
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Hãng</th>
+                            <th>Giá</th>
+                            <th>Hình</th>
+                            <th>Mô tả</th>
+                            <th>Phân Loại</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblProductList">
+                       <!-- Hiển thị danh mục sản phẩm tại đây thông qua API và Main js  -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Thêm Sản Phẩm
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProduct">
+                            <div class="row">
+                                <!-- <div class="col-6 mb-3">
+                                    <label for="productId" class="labelText"
+                                        >ID Sản Phẩm</label
+                                    >
+                                    <input
+                                        type="number"
+                                        id="productId"
+                                        placeholder="Nhập ID Sản Phẩm"
+                                        class="inputText form-control"
+                                    />
+                                    <div
+                                        id="invalidId"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter ID
+                                    </div>
+                                </div> -->
+                                <div class="col-6 mb-3">
+                                    <label for="productName" class="labelText"
+                                        >Tên Sản Phẩm</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="productName"
+                                        placeholder="Nhập Tên Sản Phẩm"
+                                        class="inputText form-control"
+                                    />
+                                    <div
+                                        id="invalidName"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Name
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="productPrice" class="labelText"
+                                        >Giá Sản Phẩm</label
+                                    >
+                                    <input
+                                        type="number"
+                                        id="productPrice"
+                                        placeholder="Nhập Giá Sản Phẩm"
+                                        class="inputText form-control"
+                                    />
+                                    <div
+                                        id="invalidPrice"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Price
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="productBrand" class="labelText"
+                                        >Brand</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="productBrand"
+                                        placeholder="Nhập Brand"
+                                        class="inputText form-control"
+                                    />
+                                    <div
+                                        id="invalidBrand"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Brand
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <label for="productImage" class="labelText"
+                                        >Hình Ảnh</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="productImage"
+                                        placeholder="Nhập Hình Ảnh"
+                                        class="inputText form-control"
+                                    />
+                                    <div
+                                        id="invalidImage"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Image
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-3">
+                                    <label for="productPhanLoai" class="labelText"
+                                        >Loại Sản Phẩm</label
+                                    >
+                                    <select
+                                        id="productPhanLoai"
+                                        class="inputSelect d-block w-100 form-control"
+                                    >
+                                        <option value="all">Tất cả loại</option>
+                                        <option value="new">NEW</option>
+                                        <option value="old">OLD</option>
+                                    </select>
+                                    <div
+                                        id="invalidPhanLoai"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Type
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="productMoTa" class="labelText"
+                                        >Mô Tả</label
+                                    >
+                                    <textarea
+                                        id="productMoTa"
+                                        rows="3"
+                                        class="inputTextArea form-control"
+                                    ></textarea>
+                                    <div
+                                        id="invalidMoTa"
+                                        class="invalid-feedback invalidText"
+                                    >
+                                        Please Enter Description
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                            Cập Nhật
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                            Thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+            integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script type="module" src="./../controllers/main.js"></script>
+    </body>
+</html>

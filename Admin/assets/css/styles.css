@@ -1,0 +1,49 @@
+/******************** Reset ***********************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    padding: 20px;
+}
+
+.sidebar {
+    height: calc(100vh - 72px);
+}
+
+.search__input {
+    width: 80%;
+    border: 1px solid gray;
+    padding: 0 20px;
+}
+
+.left {
+    width: 20%;
+}
+
+.right {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.inputSelect {
+    background: #fff
+        url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+        no-repeat right 0.75rem center/8px 10px;
+}
+
+.labelText {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
