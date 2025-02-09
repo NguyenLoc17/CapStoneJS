@@ -4,7 +4,7 @@ class Product {
         name,
         brand,
         price,
-        image,
+        img,
         moTa,
         phanLoai
     ) {
@@ -12,7 +12,7 @@ class Product {
         this.name = name;
         this.brand = brand;
         this.price = price;
-        this.image = image;
+        this.img = img;
         this.moTa = moTa;
         this.phanLoai = phanLoai;
     }

@@ -15,7 +15,7 @@ const renderListProduct = (data) => {
             name,
             brand,
             price,
-            image,
+            img,
             moTa,
             phanLoai,
         } = product;
@@ -27,7 +27,7 @@ const renderListProduct = (data) => {
                 <td>${brand}</td>
                 <td>${price}</td>
                 <td>
-                    <img src="${image}" alt="" width="50">
+                    <img src="${img}" alt="" width="50">
                 </td>
                 <td>${moTa}</td>
                 <td>${phanLoai}</td>
@@ -56,11 +56,10 @@ const handleEdit = (id) => {
     promise
         .then((result) => {
             const { data } = result;
-            getEleId("productId").value = data.id;
             getEleId("productName").value = data.name;
             getEleId("productBrand").value = data.brand;
             getEleId("productPrice").value = data.price;
-            getEleId("productImg").value = data.image;
+            getEleId("productImg").value = data.img;
             getEleId("productMoTa").value = data.moTa;
             getEleId("productPhanLoai").value = data.phanLoai;
         })
@@ -80,9 +79,10 @@ const getInfoProduct = (id) => {
     const name = getEleId("productName").value;
     const brand = getEleId("productBrand").value;
     const price = getEleId("productPrice").value * 1;
-    const img = getEleId("productImage").value;
-    const type = getEleId("productPhanLoai").value;
-    const desc = getEleId("productMoTa").value;
+    const img = getEleId("productImg").value;
+    const moTa = getEleId("productMoTa").value;
+    const phanLoai = getEleId("productPhanLoai").value;
+   
 
     let isValid = true;
     isValid &= validation.checkEmpty(
@@ -109,7 +109,7 @@ const getInfoProduct = (id) => {
         "Mời bạn chọn loại sản phẩm"
     );
 
-    isValid &= validation.checkEmpty(desc, "invalidDesc", "Mời bạn nhập mô tả");
+    isValid &= validation.checkEmpty(desc, "invalidMoTa", "Mời bạn nhập mô tả");
     if (!isValid) return null;
 
     const product = new Product(
@@ -117,7 +117,7 @@ const getInfoProduct = (id) => {
         name,
         brand,
         price,
-        image,
+        img,
         moTa,
         phanLoai
     );
@@ -292,18 +292,15 @@ const filterProduct = (type, productList) => {
 const closeInvalid = () => {
     getEleId("invalidName").innerHTML = "";
     getEleId("invalidName").style.display = "none";
+    getEleId("ivalidBrand").innerHTML = "";
+    getEleId("ivalidBrand").style.display = "none";
     getEleId("invalidPrice").innerHTML = "";
     getEleId("invalidPrice").style.display = "none";
-    getEleId("invalidScreen").innerHTML = "";
-    getEleId("invalidScreen").style.display = "none";
-    getEleId("invalidBackCamera").innerHTML = "";
-    getEleId("invalidBackCamera").style.display = "none";
-    getEleId("invalidFrontCamera").innerHTML = "";
-    getEleId("invalidFrontCamera").style.display = "none";
     getEleId("invalidImg").innerHTML = "";
     getEleId("invalidImg").style.display = "none";
-    getEleId("invalidType").innerHTML = "";
-    getEleId("invalidType").style.display = "none";
-    getEleId("invalidDesc").innerHTML = "";
-    getEleId("invalidDesc").style.display = "none";
+    getEleId("invalidMoTa").innerHTML = "";
+    getEleId("invalidMoTa").style.display = "none";
+    getEleId("invalidPhanLoai").innerHTML = "";
+    getEleId("invalidPhanLoai").style.display = "none";
+   
 };

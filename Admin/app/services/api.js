@@ -1,7 +1,7 @@
 class Api {
     fetchData() {
         const promise = axios({
-            url: "https://67a5bf43c0ac39787a1f451c.mockapi.io/Products",
+            url: "https://67a5bf43c0ac39787a1f451c.mockapi.io/Product",
             method: "GET",
         });
 
@@ -10,7 +10,7 @@ class Api {
 
     deleteDataById(id) {
         const promise = axios({
-            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Products/${id}`,
+            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Product/${id}`,
             method: "DELETE",
         });
 
@@ -19,7 +19,7 @@ class Api {
 
     addData(product) {
         const promise = axios({
-            url: "https://67a5bf43c0ac39787a1f451c.mockapi.io/Products",
+            url: "https://67a5bf43c0ac39787a1f451c.mockapi.io/Product",
             method: "POST",
             data: product,
         });
@@ -29,7 +29,7 @@ class Api {
 
     getDataById(id) {
         const promise = axios({
-            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Products/${id}`,
+            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Product/${id}`,
             method: "GET",
         });
 
@@ -38,7 +38,7 @@ class Api {
 
     updateData(product) {
         const promise = axios({
-            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Products/${product.id}`,
+            url: `https://67a5bf43c0ac39787a1f451c.mockapi.io/Product/${product.id}`,
             method: `PUT`,
             data: product,
         });
