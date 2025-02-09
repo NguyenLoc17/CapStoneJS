@@ -15,21 +15,21 @@ const renderListProduct = (data) => {
             name,
             brand,
             price,
-            img,
             moTa,
+            img,
             phanLoai,
         } = product;
 
         content += `
             <tr>
-                <th>${i + 1}</th>
+                <th>${i+1}</th>
                 <td>${name}</td>
                 <td>${brand}</td>
                 <td>${price}</td>
+                <td>${moTa}</td>
                 <td>
                     <img src="${img}" alt="" width="50">
                 </td>
-                <td>${moTa}</td>
                 <td>${phanLoai}</td>
                 <td>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleEdit('${id}')">Sửa</button>
@@ -59,8 +59,8 @@ const handleEdit = (id) => {
             getEleId("productName").value = data.name;
             getEleId("productBrand").value = data.brand;
             getEleId("productPrice").value = data.price;
-            getEleId("productImg").value = data.img;
             getEleId("productMoTa").value = data.moTa;
+            getEleId("productImg").value = data.img;
             getEleId("productPhanLoai").value = data.phanLoai;
         })
         .catch((error) => {
@@ -79,8 +79,8 @@ const getInfoProduct = (id) => {
     const name = getEleId("productName").value;
     const brand = getEleId("productBrand").value;
     const price = getEleId("productPrice").value * 1;
-    const img = getEleId("productImg").value;
     const moTa = getEleId("productMoTa").value;
+    const img = getEleId("productImg").value;
     const phanLoai = getEleId("productPhanLoai").value;
    
 
@@ -97,6 +97,9 @@ const getInfoProduct = (id) => {
         "Mời bạn nhập giá sản phẩm"
     );
 
+    isValid &= validation.checkEmpty(moTa, "invalidMoTa", "Mời bạn nhập mô tả");
+    if (!isValid) return null;
+
     isValid &= validation.checkEmpty(
         img,
         "invalidImg",
@@ -109,16 +112,13 @@ const getInfoProduct = (id) => {
         "Mời bạn chọn loại sản phẩm"
     );
 
-    isValid &= validation.checkEmpty(desc, "invalidMoTa", "Mời bạn nhập mô tả");
-    if (!isValid) return null;
-
     const product = new Product(
         id,
         name,
         brand,
         price,
-        img,
         moTa,
+        img,
         phanLoai
     );
 
@@ -128,6 +128,7 @@ const getInfoProduct = (id) => {
 /**
  * handleUpdate
  */
+
 const handleUpdate = (id) => {
     const product = getInfoProduct(id);
 
@@ -296,10 +297,10 @@ const closeInvalid = () => {
     getEleId("ivalidBrand").style.display = "none";
     getEleId("invalidPrice").innerHTML = "";
     getEleId("invalidPrice").style.display = "none";
-    getEleId("invalidImg").innerHTML = "";
-    getEleId("invalidImg").style.display = "none";
     getEleId("invalidMoTa").innerHTML = "";
     getEleId("invalidMoTa").style.display = "none";
+    getEleId("invalidImg").innerHTML = "";
+    getEleId("invalidImg").style.display = "none";
     getEleId("invalidPhanLoai").innerHTML = "";
     getEleId("invalidPhanLoai").style.display = "none";
    
