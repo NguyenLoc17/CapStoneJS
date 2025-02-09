@@ -4,16 +4,16 @@ class Product {
         name,
         brand,
         price,
-        img,
         moTa,
+        img,
         phanLoai
     ) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.price = price;
-        this.img = img;
         this.moTa = moTa;
+        this.img = img;
         this.phanLoai = phanLoai;
     }
 }
