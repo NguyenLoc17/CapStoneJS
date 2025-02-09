@@ -108,9 +108,7 @@
         />
       </div>
     </div>
-
-    <div class="product">
-      <div class="container">
+    <div class="container">
         <div class="product__content">
           <div
             class="title wow animate__animated animate__fadeInUp"
@@ -120,38 +118,17 @@
             <p><span>What We Selling</span></p>
             <h2>Our Products</h2>
           </div>
-          <div
-            class="product__box wow animate__animated animate__fadeInUp animate__delay-1s"
-          >
-            <div class="product__item">
-              <img src="./img/product_1.jpg" alt="" />
-              <h3>Nike Air Jordan 1 Low Reverse Black Toe</h3>
-              <p>3.500.000đ</p>
-              <button class="add_cart_btn">
-                <i class="fa-solid fa-cart-plus"></i><span> Add to cart</span>
-              </button>
-            </div>
-            <div class="product__item">
-              <img src="./img/product_1.jpg" alt="" />
-              <h3>Nike Air Jordan 1 Low Reverse Black Toe</h3>
-              <p>3.500.000đ</p>
-              <button class="add_cart_btn">
-                <i class="fa-solid fa-cart-plus"></i><span> Add to cart</span>
-              </button>
-            </div>
-            <div class="product__item">
-              <img src="./img/product_1.jpg" alt="" />
-              <h3>Nike Air Jordan 1 Low Reverse Black Toe</h3>
-              <p>3.500.000đ</p>
-              <button class="add_cart_btn">
-                <i class="fa-solid fa-cart-plus"></i><span> Add to cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
+      <div class="filter-container">
+        <input type="text" id="search" placeholder="Search Product...">
+        <button onclick="filterProducts()">Filter</button>
       </div>
+      <div class="product-container" id="product-list"></div>
+      <h2>Shoe Cart</h2>
+    <div class="cart-container">
+        <ul id="cart-list"></ul>
+        <p id="total-price">Price: 0 VND</p>
     </div>
-
+    </div>
     <footer>
       <div class="container">
         <div
@@ -193,6 +170,7 @@
       </div>
     </footer>
 
+    <script src="./index.js"></script>
     <!-- jquery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
